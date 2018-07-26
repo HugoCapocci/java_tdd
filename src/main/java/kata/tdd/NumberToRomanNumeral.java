@@ -6,7 +6,8 @@ public class NumberToRomanNumeral {
 
   public static ConverterRef[] refs = {
     new ConverterRef(1, "I"),
-    new ConverterRef(4, "IV")
+    new ConverterRef(4, "IV"),
+    new ConverterRef(5, "V")
   };
 
   public String toRomanNumber(int numeral) {

@@ -24,4 +24,9 @@ public class TestNumberToRomanNumeral {
   public void testConvert2TtoII() {
     assertEquals("II", numberToRomanNumeral.toRomanNumber(2));
   }
+
+  @Test
+  public void testConvert3TtoIII() {
+    assertEquals("III", numberToRomanNumeral.toRomanNumber(3));
+  }
 }

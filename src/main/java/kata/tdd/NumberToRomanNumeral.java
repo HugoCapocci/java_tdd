@@ -5,6 +5,7 @@ import kata.tdd.ConverterRef;
 public class NumberToRomanNumeral {
 
   public static ConverterRef[] refs = {
+    new ConverterRef(9, "IX"),
     new ConverterRef(5, "V"),
     new ConverterRef(4, "IV"),
     new ConverterRef(1, "I")
@@ -14,17 +15,26 @@ public class NumberToRomanNumeral {
     return toRomanNumber(numeral, 0);
   }
 
+  public String repeat(String romanChar, int occurences) {
+    String line = "";
+    for (int i = 0; i < occurences; i++) {
+      line += romanChar;
+    }
+    return line;
+  }
+
   public String toRomanNumber(int numeral, int refIndex) {
+    if (refIndex >= refs.length) { return ""; }
     String roman = "";
     ConverterRef ref = refs[refIndex];
 
     if (numeral == ref.numeral) {
       return ref.roman;
     } else if(numeral > ref.numeral) {
-      for (int i = 1; i <= numeral; i++) {
-        roman += ref.roman;
-      }
-      return roman;
+      int occurences = numeral / ref.numeral;
+      int nextNumeral = numeral - occurences * ref.numeral;
+      roman = repeat(ref.roman, occurences);
+      return roman + toRomanNumber(nextNumeral, refIndex + 1);
     }
     return toRomanNumber(numeral, refIndex + 1);
   }

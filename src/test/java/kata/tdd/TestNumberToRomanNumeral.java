@@ -39,4 +39,9 @@ public class TestNumberToRomanNumeral {
   public void testConvert5TtoV() {
     assertEquals("V", numberToRomanNumeral.toRomanNumber(5));
   }
+
+  @Test
+  public void testConvert7TtoVII() {
+    assertEquals("VII", numberToRomanNumeral.toRomanNumber(7));
+  }
 }

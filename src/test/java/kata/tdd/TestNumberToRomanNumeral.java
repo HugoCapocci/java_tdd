@@ -50,4 +50,14 @@ public class TestNumberToRomanNumeral {
     assertEquals("XLIII", numberToRomanNumeral.toRomanNumber(43));
   }
 
+  @Test
+  public void testConvert369TtoCCCLXIX() {
+    assertEquals("CCCLXIX", numberToRomanNumeral.toRomanNumber(369));
+  }
+
+  @Test
+  public void testConvert2999TtoMMCMXCIX() {
+    assertEquals("MMCMXCIX", numberToRomanNumeral.toRomanNumber(2999));
+  }
+
 }

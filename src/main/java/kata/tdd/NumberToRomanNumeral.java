@@ -5,6 +5,12 @@ import kata.tdd.ConverterRef;
 public class NumberToRomanNumeral {
 
   public static ConverterRef[] refs = {
+    new ConverterRef(1000, "M"),
+    new ConverterRef(900, "CM"),
+    new ConverterRef(500, "D"),
+    new ConverterRef(400, "CD"),
+    new ConverterRef(100, "C"),
+    new ConverterRef(90, "XC"),
     new ConverterRef(50, "L"),
     new ConverterRef(40, "XL"),
     new ConverterRef(10, "X"),
